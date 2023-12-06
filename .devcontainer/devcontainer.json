@@ -1,0 +1,21 @@
+{
+  "name": "next14-for-full-stack",
+  "dockerComposeFile": ["../compose.yml"],
+  "service": "app",
+  // "shutdownAction": "none",
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "csstools.postcss",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "firsttris.vscode-jest-runner",
+        "ms-azuretools.vscode-docker",
+        "Prisma.prisma",
+        "ritwickdey.liveserver",
+        "streetsidesoftware.code-spell-checker"
+      ]
+    }
+  }
+}
