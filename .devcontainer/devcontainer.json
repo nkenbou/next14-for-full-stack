@@ -6,6 +6,26 @@
   "workspaceFolder": "/app",
   "customizations": {
     "vscode": {
+      "settings": {
+        "typescript.tsdk": "apps/web/node_modules/typescript/lib",
+        "typescript.enablePromptUseWorkspaceTsdk": true,
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "files.insertFinalNewline": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.codeActionsOnSave": {
+          "source.organizeImports": true,
+          "source.fixAll.eslint": true
+        },
+        "eslint.workingDirectories": [
+          {
+            "mode": "auto"
+          }
+        ]
+      },
       "extensions": [
         "csstools.postcss",
         "dbaeumer.vscode-eslint",
