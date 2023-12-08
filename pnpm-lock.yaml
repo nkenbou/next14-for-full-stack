@@ -71,16 +71,19 @@ importers:
         version: 7.6.4(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
       '@storybook/test':
         specifier: ^7.6.4
-        version: 7.6.4(@jest/globals@29.7.0)(jest@29.7.0)
+        version: 7.6.4(@jest/globals@29.7.0)(@types/jest@29.5.11)(jest@29.7.0)
       '@testing-library/jest-dom':
         specifier: ^6.1.5
-        version: 6.1.5(@jest/globals@29.7.0)(jest@29.7.0)
+        version: 6.1.5(@jest/globals@29.7.0)(@types/jest@29.5.11)(jest@29.7.0)
       '@testing-library/react':
         specifier: ^14.1.2
         version: 14.1.2(react-dom@18.2.0)(react@18.2.0)
       '@types/eslint':
         specifier: ^8.44.7
         version: 8.44.7
+      '@types/jest':
+        specifier: ^29.5.11
+        version: 29.5.11
       '@types/node':
         specifier: ^17.0.12
         version: 17.0.45
@@ -3836,7 +3839,7 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/test@7.6.4(@jest/globals@29.7.0)(jest@29.7.0):
+  /@storybook/test@7.6.4(@jest/globals@29.7.0)(@types/jest@29.5.11)(jest@29.7.0):
     resolution: {integrity: sha512-Ns9IpGsUcu1eQ6Dp6oprjRyis5NPgoHYQ4owR4hnxArtgW0djeKj2yb1fgdEIy0cVcU0F368zfL+ofX0ijy1Rg==}
     dependencies:
       '@storybook/client-logger': 7.6.4
@@ -3844,7 +3847,7 @@ packages:
       '@storybook/instrumenter': 7.6.4
       '@storybook/preview-api': 7.6.4
       '@testing-library/dom': 9.3.3
-      '@testing-library/jest-dom': 6.1.5(@jest/globals@29.7.0)(jest@29.7.0)
+      '@testing-library/jest-dom': 6.1.5(@jest/globals@29.7.0)(@types/jest@29.5.11)(jest@29.7.0)
       '@testing-library/user-event': 14.3.0(@testing-library/dom@9.3.3)
       '@types/chai': 4.3.11
       '@vitest/expect': 0.34.7
@@ -4013,7 +4016,7 @@ packages:
       pretty-format: 27.5.1
     dev: true
 
-  /@testing-library/jest-dom@6.1.5(@jest/globals@29.7.0)(jest@29.7.0):
+  /@testing-library/jest-dom@6.1.5(@jest/globals@29.7.0)(@types/jest@29.5.11)(jest@29.7.0):
     resolution: {integrity: sha512-3y04JLW+EceVPy2Em3VwNr95dOKqA8DhR0RJHhHKDZNYXcVXnEK7WIrpj4eYU8SVt/qYZ2aRWt/WgQ+grNES8g==}
     engines: {node: '>=14', npm: '>=6', yarn: '>=1'}
     peerDependencies:
@@ -4034,6 +4037,7 @@ packages:
       '@adobe/css-tools': 4.3.2
       '@babel/runtime': 7.23.2
       '@jest/globals': 29.7.0
+      '@types/jest': 29.5.11
       aria-query: 5.3.0
       chalk: 3.0.0
       css.escape: 1.5.1
@@ -4279,6 +4283,13 @@ packages:
     resolution: {integrity: sha512-pk2B1NWalF9toCRu6gjBzR69syFjP4Od8WRAX+0mmf9lAjCRicLOWc+ZrxZHx/0XRjotgkF9t6iaMJ+aXcOdZQ==}
     dependencies:
       '@types/istanbul-lib-report': 3.0.3
+    dev: true
+
+  /@types/jest@29.5.11:
+    resolution: {integrity: sha512-S2mHmYIVe13vrm6q4kN6fLYYAka15ALQki/vgDC3mIukEOx8WJlv0kQPM+d4w8Gp6u0uSdKND04IlTXBv0rwnQ==}
+    dependencies:
+      expect: 29.7.0
+      pretty-format: 29.7.0
     dev: true
 
   /@types/jsdom@20.0.1:
