@@ -9,5 +9,6 @@ describe("page", () => {
   test("レンダリングすること", () => {
     render(<Default />);
     expect(screen.getByText("web")).toBeInTheDocument();
+    expect(screen.getByText("web")).toMatchSnapshot();
   });
 });

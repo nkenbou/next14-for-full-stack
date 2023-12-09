@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page レンダリングすること 1`] = `
+<code
+  class="code"
+>
+  web
+</code>
+`;
