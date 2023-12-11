@@ -14,7 +14,10 @@
     "vrt:capture": "storycap http://localhost:6006 -o ./.reg/actual",
     "vrt:compare": "reg-cli ./.reg/actual ./.reg/expected ./.reg/diff -J ./.reg/out.json -R ./.reg/index.html",
     "vrt": "run-s vrt:reset vrt:capture vrt:compare",
-    "vrt:approve": "pnpm vrt:compare -U"
+    "vrt:approve": "pnpm vrt:compare -U",
+    "e2e": "playwright test",
+    "e2e:approve": "playwright test --update-snapshots",
+    "e2e:report": "playwright show-report"
   },
   "dependencies": {
     "@repo/ui": "workspace:*",
@@ -25,6 +28,7 @@
   "devDependencies": {
     "@jest/globals": "^29.7.0",
     "@next/eslint-plugin-next": "^14.0.2",
+    "@playwright/test": "^1.40.1",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@storybook/addon-essentials": "^7.6.4",
