@@ -9,8 +9,12 @@
     "lint": "eslint . --max-warnings 0",
     "test": "jest",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "screenshot": "storycap http://localhost:6006"
+    "storybook:build": "storybook build",
+    "vrt:reset": "rm -rf ./.reg/actual",
+    "vrt:capture": "storycap http://localhost:6006 -o ./.reg/actual",
+    "vrt:compare": "reg-cli ./.reg/actual ./.reg/expected ./.reg/diff -J ./.reg/out.json -R ./.reg/index.html",
+    "vrt": "run-s vrt:reset vrt:capture vrt:compare",
+    "vrt:approve": "pnpm vrt:compare -U"
   },
   "dependencies": {
     "@repo/ui": "workspace:*",
@@ -43,6 +47,7 @@
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "npm-run-all": "^4.1.5",
+    "reg-cli": "^0.17.7",
     "storybook": "^7.6.4",
     "storycap": "^4.2.0",
     "typescript": "^5.2.2"
