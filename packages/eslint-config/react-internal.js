@@ -35,6 +35,7 @@ module.exports = {
     ".*.js",
     "node_modules/",
     "dist/",
+    "coverage/",
   ],
   overrides: [
     // Force ESLint to detect .tsx files
