@@ -1,6 +1,8 @@
 import type { Preview } from "@storybook/react";
+import { withScreenshot } from "storycap";
 
 const preview: Preview = {
+  decorators: [withScreenshot as any],
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
@@ -12,6 +14,7 @@ const preview: Preview = {
     nextjs: {
       appDirectory: true,
     },
+    screenshot: {},
   },
 };
 
