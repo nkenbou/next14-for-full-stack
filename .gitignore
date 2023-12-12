@@ -17,8 +17,8 @@ node_modules
 coverage
 
 # Visual Regression Testing
-**/.reg/*
-!**/.reg/expected
+**/vrt/*
+!**/vrt/expected
 
 # Turbo
 .turbo
