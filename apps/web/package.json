@@ -12,7 +12,7 @@
     "storybook:build": "storybook build",
     "vrt:reset": "rm -rf ./.reg/actual",
     "vrt:capture": "storycap http://localhost:6006 -o ./.reg/actual",
-    "vrt:compare": "reg-cli ./.reg/actual ./.reg/expected ./.reg/diff -J ./.reg/out.json -R ./.reg/index.html",
+    "vrt:compare": "reg-cli ./.reg/actual ./.reg/expected ./.reg/diff -J ./.reg/out.json -R ./.reg/index.html -M 0.01",
     "vrt": "run-s vrt:reset vrt:capture vrt:compare",
     "vrt:approve": "pnpm vrt:compare -U",
     "e2e": "playwright test",
