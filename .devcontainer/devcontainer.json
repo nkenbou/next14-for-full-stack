@@ -23,6 +23,7 @@
           "source.organizeImports": true,
           "source.fixAll.eslint": true
         },
+        "prettier.trailingComma": "all", // default since prettier 3.0
         "eslint.workingDirectories": [
           {
             "mode": "auto"

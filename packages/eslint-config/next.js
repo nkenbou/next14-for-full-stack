@@ -35,7 +35,12 @@ module.exports = {
     { files: ["*.js?(x)", "*.ts?(x)"] },
     {
       files: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+      excludedFiles: "**/e2e/**/*",
       extends: [require.resolve("@vercel/style-guide/eslint/jest-react")],
+    },
+    {
+      files: "**/e2e/**/?(*.)+(spec|test).[jt]s?(x)",
+      extends: [require.resolve("@vercel/style-guide/eslint/playwright-test")],
     },
   ],
 };
