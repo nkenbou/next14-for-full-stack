@@ -33,7 +33,6 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@jest/globals": "^29.7.0",
     "@next/eslint-plugin-next": "^14.0.2",
     "@playwright/test": "^1.40.1",
     "@repo/eslint-config": "workspace:*",

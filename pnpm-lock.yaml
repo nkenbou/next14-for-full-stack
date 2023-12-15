@@ -36,9 +36,6 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
-      '@jest/globals':
-        specifier: ^29.7.0
-        version: 29.7.0
       '@next/eslint-plugin-next':
         specifier: ^14.0.2
         version: 14.0.2
@@ -74,10 +71,10 @@ importers:
         version: 7.6.4(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
       '@storybook/test':
         specifier: ^7.6.4
-        version: 7.6.4(@jest/globals@29.7.0)(@types/jest@29.5.11)(jest@29.7.0)
+        version: 7.6.4(@types/jest@29.5.11)(jest@29.7.0)
       '@testing-library/jest-dom':
         specifier: ^6.1.5
-        version: 6.1.5(@jest/globals@29.7.0)(@types/jest@29.5.11)(jest@29.7.0)
+        version: 6.1.5(@types/jest@29.5.11)(jest@29.7.0)
       '@testing-library/react':
         specifier: ^14.1.2
         version: 14.1.2(react-dom@18.2.0)(react@18.2.0)
@@ -147,6 +144,8 @@ importers:
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
+
+  packages/example-service: {}
 
   packages/typescript-config: {}
 
@@ -3883,7 +3882,7 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/test@7.6.4(@jest/globals@29.7.0)(@types/jest@29.5.11)(jest@29.7.0):
+  /@storybook/test@7.6.4(@types/jest@29.5.11)(jest@29.7.0):
     resolution: {integrity: sha512-Ns9IpGsUcu1eQ6Dp6oprjRyis5NPgoHYQ4owR4hnxArtgW0djeKj2yb1fgdEIy0cVcU0F368zfL+ofX0ijy1Rg==}
     dependencies:
       '@storybook/client-logger': 7.6.4
@@ -3891,7 +3890,7 @@ packages:
       '@storybook/instrumenter': 7.6.4
       '@storybook/preview-api': 7.6.4
       '@testing-library/dom': 9.3.3
-      '@testing-library/jest-dom': 6.1.5(@jest/globals@29.7.0)(@types/jest@29.5.11)(jest@29.7.0)
+      '@testing-library/jest-dom': 6.1.5(@types/jest@29.5.11)(jest@29.7.0)
       '@testing-library/user-event': 14.3.0(@testing-library/dom@9.3.3)
       '@types/chai': 4.3.11
       '@vitest/expect': 0.34.7
@@ -4060,7 +4059,7 @@ packages:
       pretty-format: 27.5.1
     dev: true
 
-  /@testing-library/jest-dom@6.1.5(@jest/globals@29.7.0)(@types/jest@29.5.11)(jest@29.7.0):
+  /@testing-library/jest-dom@6.1.5(@types/jest@29.5.11)(jest@29.7.0):
     resolution: {integrity: sha512-3y04JLW+EceVPy2Em3VwNr95dOKqA8DhR0RJHhHKDZNYXcVXnEK7WIrpj4eYU8SVt/qYZ2aRWt/WgQ+grNES8g==}
     engines: {node: '>=14', npm: '>=6', yarn: '>=1'}
     peerDependencies:
@@ -4080,7 +4079,6 @@ packages:
     dependencies:
       '@adobe/css-tools': 4.3.2
       '@babel/runtime': 7.23.2
-      '@jest/globals': 29.7.0
       '@types/jest': 29.5.11
       aria-query: 5.3.0
       chalk: 3.0.0
