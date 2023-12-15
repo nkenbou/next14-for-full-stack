@@ -6,7 +6,7 @@
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
-    "test": {
+    "unit": {
       "dependsOn": ["build"],
       "inputs": ["**/*.ts", "**/*.tsx"]
     },

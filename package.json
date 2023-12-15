@@ -5,7 +5,8 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "storybook": "turbo storybook",
-    "test": "turbo test",
+    "test": "pnpm lint && pnpm unit",
+    "unit": "turbo unit",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
