@@ -22,5 +22,5 @@
       "persistent": true
     }
   },
-  "globalEnv": ["CI"]
+  "globalEnv": ["NODE_ENV", "CI"]
 }
