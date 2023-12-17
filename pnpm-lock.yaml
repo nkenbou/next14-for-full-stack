@@ -138,6 +138,9 @@ importers:
       eslint-config-turbo:
         specifier: ^1.10.12
         version: 1.10.12(eslint@8.54.0)
+      eslint-plugin-import-access:
+        specifier: ^2.1.2
+        version: 2.1.2(eslint@8.54.0)(typescript@5.2.2)
       eslint-plugin-only-warn:
         specifier: ^1.1.0
         version: 1.1.0
@@ -7401,6 +7404,17 @@ packages:
       escape-string-regexp: 1.0.5
       eslint: 8.54.0
       ignore: 5.2.4
+    dev: true
+
+  /eslint-plugin-import-access@2.1.2(eslint@8.54.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-pSkOemuqFUdn/AfPx2WpeVQmErRqXOH8utfbzfjk69F+F1Ax7seFXJP9u3T9D/Jk/a2s0Q0RRjgplKFq+4ybfg==}
+    dependencies:
+      '@typescript-eslint/utils': 6.11.0(eslint@8.54.0)(typescript@5.2.2)
+      tsutils: 3.21.0(typescript@5.2.2)
+    transitivePeerDependencies:
+      - eslint
+      - supports-color
+      - typescript
     dev: true
 
   /eslint-plugin-import@2.29.0(@typescript-eslint/parser@6.11.0)(eslint-import-resolver-typescript@3.6.1)(eslint@8.54.0):

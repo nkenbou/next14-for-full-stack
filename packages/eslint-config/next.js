@@ -4,12 +4,21 @@ const project = resolve(process.cwd(), "tsconfig.json");
 
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
+  plugins: ["only-warn", "import-access"],
   extends: [
     "eslint:recommended",
     "prettier",
     require.resolve("@vercel/style-guide/eslint/next"),
     "eslint-config-turbo",
   ],
+  rules: {
+    "import-access/jsdoc": [
+      "error",
+      {
+        defaultImportability: "package",
+      },
+    ],
+  },
   globals: {
     React: true,
     JSX: true,
@@ -17,7 +26,6 @@ module.exports = {
   env: {
     node: true,
   },
-  plugins: ["only-warn"],
   settings: {
     "import/resolver": {
       typescript: {
