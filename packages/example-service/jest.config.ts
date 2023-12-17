@@ -5,6 +5,10 @@ const config: Config = {
   transform: {
     "^.+\\.(ts|tsx)$": "ts-jest",
   },
+  moduleNameMapper: {
+    "@/(.+)": "<rootDir>/src/$1",
+  },
+  testEnvironment: "@quramy/jest-prisma/environment",
   collectCoverage: true,
   coverageDirectory: "coverage",
 };

@@ -17,6 +17,9 @@
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
   "devDependencies": {
+    "@quramy/jest-prisma": "^1.7.2",
+    "@quramy/jest-prisma-node": "^1.7.2",
+    "@quramy/prisma-fabbrica": "^2.0.2",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/jest": "^29.5.11",

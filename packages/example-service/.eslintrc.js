@@ -4,10 +4,11 @@ module.exports = {
   extends: ["@repo/eslint-config/library.js"],
   globals: {
     globalThis: true,
+    jestPrisma: true,
   },
   parser: "@typescript-eslint/parser",
   parserOptions: {
     project: true,
   },
-  ignorePatterns: ["jest.config.ts"],
+  ignorePatterns: ["__generated__"],
 };
