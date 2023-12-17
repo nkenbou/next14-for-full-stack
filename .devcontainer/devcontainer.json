@@ -10,7 +10,7 @@
   "customizations": {
     "vscode": {
       "settings": {
-        "typescript.tsdk": "apps/web/node_modules/typescript/lib",
+        "typescript.tsdk": "packages/eslint-config/node_modules/typescript/lib",
         "typescript.enablePromptUseWorkspaceTsdk": true,
         "editor.tabSize": 2,
         "editor.insertSpaces": true,
