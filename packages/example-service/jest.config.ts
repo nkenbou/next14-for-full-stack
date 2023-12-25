@@ -8,7 +8,7 @@ const config: Config = {
   moduleNameMapper: {
     "@/(.+)": "<rootDir>/src/$1",
   },
-  testEnvironment: "@quramy/jest-prisma/environment",
+  testEnvironment: "@quramy/jest-prisma-node/environment",
   collectCoverage: true,
   coverageDirectory: "coverage",
 };
