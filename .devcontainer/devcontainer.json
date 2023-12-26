@@ -16,6 +16,7 @@
         "editor.insertSpaces": true,
         "files.insertFinalNewline": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSaveMode": "file",
         "editor.formatOnPaste": true,
         "editor.formatOnSave": true,
         "editor.formatOnType": true,
