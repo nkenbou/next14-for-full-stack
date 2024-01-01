@@ -2,20 +2,15 @@ const { resolve } = require("node:path");
 
 const project = resolve(process.cwd(), "tsconfig.json");
 
-/*
- * This is a custom ESLint configuration for use with
- * internal (bundled by their consumer) libraries
- * that utilize React.
- *
- * This config extends the Vercel Engineering Style Guide.
- * For more information, see https://github.com/vercel/style-guide
- *
- */
-
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   plugins: ["only-warn", "import-access"],
-  extends: ["eslint:recommended", "prettier", "eslint-config-turbo"],
+  extends: [
+    "@vercel/style-guide/eslint/browser",
+    "@vercel/style-guide/eslint/typescript",
+    "@vercel/style-guide/eslint/react",
+    "eslint-config-turbo",
+  ].map(require.resolve),
   rules: {
     "import-access/jsdoc": [
       "error",
@@ -27,9 +22,6 @@ module.exports = {
   globals: {
     React: true,
     JSX: true,
-  },
-  env: {
-    browser: true,
   },
   settings: {
     "import/resolver": {
@@ -48,5 +40,18 @@ module.exports = {
   overrides: [
     // Force ESLint to detect .tsx files
     { files: ["*.js?(x)", "*.ts?(x)"] },
+    {
+      files: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+      extends: [require.resolve("@vercel/style-guide/eslint/jest-react")],
+      rules: {
+        "tsdoc/syntax": "off",
+        "jest/prefer-lowercase-title": [
+          "warn",
+          {
+            ignore: ["describe"],
+          },
+        ],
+      },
+    },
   ],
 };

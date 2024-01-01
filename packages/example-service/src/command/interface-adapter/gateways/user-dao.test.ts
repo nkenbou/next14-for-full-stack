@@ -2,14 +2,16 @@
  * @jest-environment @quramy/jest-prisma-node/environment
  * //@jest-environment-options { "verboseQuery": true }
  */
+import { initialize } from "@quramy/prisma-fabbrica";
 import { prisma } from "@/infrastructure/db";
 import { UserFactory } from "@/infrastructure/factories";
-import { initialize } from "@quramy/prisma-fabbrica";
 
 jest.mock("@/infrastructure/db", () => ({ prisma: jestPrisma.client }));
 
 describe("prisma test examples", () => {
-  beforeEach(() => initialize({ prisma: jestPrisma.client }));
+  beforeEach(() => {
+    initialize({ prisma: jestPrisma.client });
+  });
 
   test("add user", async () => {
     await UserFactory.create({

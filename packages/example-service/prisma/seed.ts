@@ -1,8 +1,10 @@
-import { Prisma, PrismaClient } from "@prisma/client";
+import console from "node:console";
+import type { Prisma } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-async function main() {
+async function main(): Promise<void> {
   await prisma.post.deleteMany();
   await prisma.user.deleteMany();
 
@@ -21,6 +23,7 @@ async function main() {
     },
   ];
   for (const user of users) {
+    // eslint-disable-next-line no-await-in-loop -- パフォーマンスの考慮不要なためシンプルにしておく
     await prisma.user.create({
       data: user,
     });
@@ -52,6 +55,7 @@ async function main() {
     },
   ];
   for (const post of posts) {
+    // eslint-disable-next-line no-await-in-loop -- パフォーマンスの考慮不要なためシンプルにしておく
     await prisma.post.create({
       data: post,
     });

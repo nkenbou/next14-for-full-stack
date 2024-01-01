@@ -6,12 +6,15 @@ const project = resolve(process.cwd(), "tsconfig.json");
 module.exports = {
   plugins: ["only-warn", "import-access"],
   extends: [
-    "eslint:recommended",
-    "prettier",
-    require.resolve("@vercel/style-guide/eslint/next"),
+    "@vercel/style-guide/eslint/node",
+    "@vercel/style-guide/eslint/browser",
+    "@vercel/style-guide/eslint/typescript",
+    "@vercel/style-guide/eslint/react",
+    "@vercel/style-guide/eslint/next",
     "eslint-config-turbo",
-  ],
+  ].map(require.resolve),
   rules: {
+    "import/no-default-export": "off",
     "import-access/jsdoc": [
       "error",
       {
@@ -22,9 +25,6 @@ module.exports = {
   globals: {
     React: true,
     JSX: true,
-  },
-  env: {
-    node: true,
   },
   settings: {
     "import/resolver": {
@@ -45,6 +45,15 @@ module.exports = {
       files: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
       excludedFiles: "**/e2e/**/*",
       extends: [require.resolve("@vercel/style-guide/eslint/jest-react")],
+      rules: {
+        "tsdoc/syntax": "off",
+        "jest/prefer-lowercase-title": [
+          "warn",
+          {
+            ignore: ["describe"],
+          },
+        ],
+      },
     },
     {
       files: "**/e2e/**/?(*.)+(spec|test).[jt]s?(x)",

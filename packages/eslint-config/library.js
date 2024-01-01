@@ -5,7 +5,11 @@ const project = resolve(process.cwd(), "tsconfig.json");
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   plugins: ["only-warn", "import-access"],
-  extends: ["eslint:recommended", "prettier", "eslint-config-turbo"],
+  extends: [
+    "@vercel/style-guide/eslint/node",
+    "@vercel/style-guide/eslint/typescript",
+    "eslint-config-turbo",
+  ].map(require.resolve),
   rules: {
     "import-access/jsdoc": [
       "error",
@@ -17,9 +21,6 @@ module.exports = {
   globals: {
     React: true,
     JSX: true,
-  },
-  env: {
-    node: true,
   },
   settings: {
     "import/resolver": {
@@ -42,6 +43,15 @@ module.exports = {
     {
       files: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
       extends: [require.resolve("@vercel/style-guide/eslint/jest")],
+      rules: {
+        "tsdoc/syntax": "off",
+        "jest/prefer-lowercase-title": [
+          "warn",
+          {
+            ignore: ["describe"],
+          },
+        ],
+      },
     },
   ],
 };
