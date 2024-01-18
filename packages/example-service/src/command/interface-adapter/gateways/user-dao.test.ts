@@ -3,10 +3,10 @@
  * //@jest-environment-options { "verboseQuery": true }
  */
 import { initialize } from "@quramy/prisma-fabbrica";
-import { prisma } from "@/infrastructure/db";
-import { UserFactory } from "@/infrastructure/factories";
+import { prisma } from "@repo/prisma/client";
+import { UserFactory } from "@repo/prisma/factories";
 
-jest.mock("@/infrastructure/db", () => ({ prisma: jestPrisma.client }));
+jest.mock("@repo/prisma/client", () => ({ prisma: jestPrisma.client }));
 
 describe("prisma test examples", () => {
   beforeEach(() => {

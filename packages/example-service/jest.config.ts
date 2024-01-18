@@ -9,6 +9,7 @@ const config: Config = {
     "@/(.+)": "<rootDir>/src/$1",
   },
   testEnvironment: "@quramy/jest-prisma-node/environment",
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
   collectCoverage: true,
   coverageDirectory: "coverage",
 };
