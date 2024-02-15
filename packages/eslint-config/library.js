@@ -11,12 +11,7 @@ module.exports = {
     "eslint-config-turbo",
   ].map(require.resolve),
   rules: {
-    "import-access/jsdoc": [
-      "error",
-      {
-        defaultImportability: "package",
-      },
-    ],
+    "import-access/jsdoc": ["error"],
   },
   globals: {
     React: true,

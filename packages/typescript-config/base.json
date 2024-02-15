@@ -18,8 +18,7 @@
     "target": "ES2022",
     "plugins": [
       {
-        "name": "eslint-plugin-import-access",
-        "jsdoc": { "defaultImportability": "package" }
+        "name": "eslint-plugin-import-access"
       }
     ]
   }

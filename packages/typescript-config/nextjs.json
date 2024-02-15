@@ -9,5 +9,11 @@
     "allowJs": true,
     "jsx": "preserve",
     "noEmit": true
-  }
+  },
+  "plugins": [
+    {
+      "name": "eslint-plugin-import-access",
+      "jsdoc": { "defaultImportability": "package" }
+    }
+  ]
 }
