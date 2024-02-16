@@ -6,18 +6,41 @@ const project = resolve(process.cwd(), "tsconfig.json");
 module.exports = {
   plugins: ["only-warn", "import-access"],
   extends: [
-    "@vercel/style-guide/eslint/browser",
-    "@vercel/style-guide/eslint/typescript",
-    "@vercel/style-guide/eslint/react",
-    "eslint-config-turbo",
-  ].map(require.resolve),
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:eslint-comments/recommended",
+    "turbo",
+    "prettier",
+  ],
   rules: {
+    "@typescript-eslint/explicit-function-return-type": [
+      "warn",
+      { allowExpressions: true },
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        args: "after-used",
+        argsIgnorePattern: "^_",
+        ignoreRestSiblings: false,
+        vars: "all",
+        varsIgnorePattern: "^_",
+      },
+    ],
+    "eslint-comments/no-unused-disable": "warn",
+    "eslint-comments/require-description": "warn",
     "import-access/jsdoc": [
-      "error",
+      "warn",
       {
         defaultImportability: "package",
       },
     ],
+    "no-await-in-loop": "warn",
   },
   globals: {
     React: true,
@@ -30,28 +53,14 @@ module.exports = {
       },
     },
   },
-  ignorePatterns: [
-    // Ignore dotfiles
-    ".*.js",
-    "node_modules/",
-    "dist/",
-    "coverage/",
-  ],
+  ignorePatterns: [".*.js", "node_modules/", "dist/", "coverage/"],
   overrides: [
-    // Force ESLint to detect .tsx files
-    { files: ["*.js?(x)", "*.ts?(x)"] },
+    {
+      files: ["*.js?(x)", "*.ts?(x)"],
+    },
     {
       files: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
-      extends: [require.resolve("@vercel/style-guide/eslint/jest-react")],
-      rules: {
-        "tsdoc/syntax": "off",
-        "jest/prefer-lowercase-title": [
-          "warn",
-          {
-            ignore: ["describe"],
-          },
-        ],
-      },
+      extends: ["plugin:jest/recommended", "plugin:testing-library/react"],
     },
   ],
 };

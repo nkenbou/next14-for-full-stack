@@ -11,5 +11,4 @@ const config: Config = {
   coverageDirectory: "coverage",
 };
 
-// eslint-disable-next-line import/no-default-export -- default エクスポートが必要なため
 export default config;
