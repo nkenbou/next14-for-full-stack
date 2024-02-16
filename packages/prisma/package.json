@@ -6,9 +6,15 @@
     "./client": "./src/client.ts",
     "./factories": "./src/factories.ts"
   },
-  "scripts": {},
-  "prisma": {
-    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  "scripts": {
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:migrate:dev": "prisma migrate dev",
+    "db:push": "prisma db push",
+    "db:seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} ./src/seed.ts",
+    "format": "prisma format",
+    "generate": "prisma generate",
+    "lint": "eslint . --max-warnings 0",
+    "studio": "prisma studio"
   },
   "devDependencies": {
     "@quramy/prisma-fabbrica": "^2.0.2",

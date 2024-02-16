@@ -2,13 +2,18 @@
   "name": "next14-for-full-stack",
   "private": true,
   "scripts": {
-    "build": "turbo build",
-    "dev": "turbo dev",
-    "storybook": "turbo storybook",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "storybook": "turbo run storybook",
     "test": "pnpm lint && pnpm unit",
-    "unit": "turbo unit",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "unit": "turbo run unit",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "db:migrate:deploy": "turbo run db:migrate:deploy",
+    "db:migrate:dev": "turbo run db:migrate:dev",
+    "db:push": "turbo run db:push",
+    "db:seed": "turbo run db:seed",
+    "generate": "turbo run generate"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

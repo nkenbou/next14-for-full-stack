@@ -4,7 +4,7 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "unit": {
       "dependsOn": ["build"],
@@ -20,6 +20,13 @@
     "storybook": {
       "cache": false,
       "persistent": true
+    },
+    "db:migrate:deploy": {},
+    "db:migrate:dev": {},
+    "db:push": {},
+    "db:seed": {},
+    "generate": {
+      "dependsOn": ["^generate"]
     }
   },
   "globalEnv": ["NODE_ENV", "CI"]
