@@ -4,7 +4,6 @@ const project = resolve(process.cwd(), "tsconfig.json");
 
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  plugins: ["only-warn", "import-access"],
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -14,6 +13,7 @@ module.exports = {
     "turbo",
     "prettier",
   ],
+  plugins: ["only-warn", "import-access"],
   rules: {
     "@typescript-eslint/explicit-function-return-type": [
       "warn",
@@ -29,14 +29,17 @@ module.exports = {
         varsIgnorePattern: "^_",
       },
     ],
-    "eslint-comments/no-unused-disable": "warn",
     "eslint-comments/require-description": "warn",
     "import-access/jsdoc": "warn",
     "no-await-in-loop": "warn",
   },
+  reportUnusedDisableDirectives: true,
   globals: {
     React: true,
     JSX: true,
+  },
+  env: {
+    node: true,
   },
   settings: {
     "import/resolver": {
