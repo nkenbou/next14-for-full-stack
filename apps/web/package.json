@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "run-p --aggregate-output dev:*",
+    "dev:next": "next dev",
+    "dev:storybook": "storybook dev -p 6006",
+    "dev::tcm": "tcm -p '**/*.module.css' -w ./src",
     "build": "next build",
     "start": "next start",
     "test": "run-p -l -c --aggregate-output lint unit",
@@ -12,11 +15,10 @@
     "lint:eslint": "eslint . --max-warnings 0",
     "lint:prettier": "prettier --check .",
     "lint:tsc": "tsc -p . --noEmit",
+    "lint:tcm": "tcm -p '**/*.module.css' -l ./src",
     "fix": "run-s fix:prettier fix:eslint",
     "fix:eslint": "pnpm lint:eslint --fix",
     "fix:prettier": "pnpm lint:prettier --write",
-    "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build",
     "vrt:reset": "rm -rf ./vrt/actual",
     "vrt:capture": "storycap http://localhost:6006 -o ./vrt/actual",
     "vrt:compare": "reg-cli ./vrt/actual ./vrt/expected ./vrt/diff -J ./vrt/out.json -R ./vrt/index.html -M 0.01",
@@ -59,6 +61,7 @@
     "reg-cli": "^0.17.7",
     "storybook": "^7.6.4",
     "storycap": "^4.2.0",
+    "typed-css-modules": "^0.9.1",
     "typescript": "^5.2.2"
   }
 }
