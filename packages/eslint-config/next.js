@@ -1,48 +1,21 @@
-const { resolve } = require("node:path");
-
-const project = resolve(process.cwd(), "tsconfig.json");
-
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:import/recommended",
-    "plugin:import/typescript",
+    require.resolve("./_base"),
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:@next/next/recommended",
-    "plugin:eslint-comments/recommended",
-    "turbo",
     "prettier",
   ],
-  plugins: ["only-warn", "import-access"],
   rules: {
-    "@typescript-eslint/explicit-function-return-type": [
-      "warn",
-      { allowExpressions: true },
-    ],
-    "@typescript-eslint/no-unused-vars": [
-      "warn",
-      {
-        args: "after-used",
-        argsIgnorePattern: "^_",
-        ignoreRestSiblings: false,
-        vars: "all",
-        varsIgnorePattern: "^_",
-      },
-    ],
-    "eslint-comments/require-description": "warn",
     "import-access/jsdoc": [
       "warn",
       {
         defaultImportability: "package",
       },
     ],
-    "no-await-in-loop": "warn",
   },
-  reportUnusedDisableDirectives: true,
   globals: {
     React: true,
     JSX: true,
@@ -52,11 +25,6 @@ module.exports = {
     browser: true,
   },
   settings: {
-    "import/resolver": {
-      typescript: {
-        project,
-      },
-    },
     react: {
       version: "detect",
     },
