@@ -105,6 +105,9 @@ importers:
       npm-run-all:
         specifier: ^4.1.5
         version: 4.1.5
+      prettier:
+        specifier: ^3.1.0
+        version: 3.1.0
       reg-cli:
         specifier: ^0.17.7
         version: 0.17.7
@@ -160,6 +163,9 @@ importers:
       npm-run-all:
         specifier: ^4.1.5
         version: 4.1.5
+      prettier:
+        specifier: ^3.1.0
+        version: 3.1.0
       ts-jest:
         specifier: ^29.1.1
         version: 29.1.1(@babel/core@7.23.3)(jest@29.7.0)(typescript@5.2.2)
@@ -295,6 +301,9 @@ importers:
       npm-run-all:
         specifier: ^4.1.5
         version: 4.1.5
+      prettier:
+        specifier: ^3.1.0
+        version: 3.1.0
       ts-jest:
         specifier: ^29.1.1
         version: 29.1.1(@babel/core@7.23.3)(jest@29.7.0)(typescript@5.2.2)
