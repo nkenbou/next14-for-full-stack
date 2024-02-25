@@ -14,9 +14,6 @@ importers:
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:packages/typescript-config
-      prettier:
-        specifier: ^3.1.0
-        version: 3.1.0
       turbo:
         specifier: latest
         version: 1.11.0
